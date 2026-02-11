@@ -1,15 +1,30 @@
-//
-//  main.c
-//  day10
-//
-//  Created by Sanaa Kumar on 11/02/26.
-//
-
-#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+int main(void)
+{
+char str[1000];
+scanf("%s",str);
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return EXIT_SUCCESS;
+int left=0;
+int right=strlen(str) -1;
+int flag=1;
+
+while(left<right)
+{
+if(str[left]!=str[right])
+{
+flag=0;
+break;
 }
+left++;
+right--;
+}
+
+if(flag==1)
+printf("Palindrome");
+else
+printf("Not Palindrome");
+
+return 0;
+}
+
